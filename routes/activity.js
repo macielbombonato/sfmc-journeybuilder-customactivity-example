@@ -50,7 +50,7 @@ function logData(req) {
         console.log("originalUrl: " + req.originalUrl);
     }catch(e){
         console.log(e);
-        res.status(500).json({branchResult: 'generic_error'});
+        return res.status(500).json({branchResult: 'generic_error'});
     }
 }
 
@@ -61,10 +61,10 @@ exports.edit = function (req, res) {
     try {
         console.log( req.body );
         logData(req);
-        res.send(200, 'Edit');
+        return res.send(200, 'Edit');
     }catch(e){
         console.log(e);
-        res.status(500).json({branchResult: 'generic_error'});
+        return res.status(500).json({branchResult: 'generic_error'});
     }
 };
 
@@ -75,10 +75,10 @@ exports.save = function (req, res) {
     try {
         console.log( req.body );
         logData(req);
-        res.status(200).json({ "success": true });
+        return res.status(200).json({ "success": true });
     }catch(e){
         console.log(e);
-        res.status(500).json({ "success": false });
+        return res.status(500).json({ "success": false });
     }
 };
 
@@ -129,14 +129,14 @@ exports.execute = function (req, res) {
 
         // To validate alternative flow on jorney
         if (req.body.inArguments[0].to.valueOf() == new String("999").valueOf()) {
-            res.status(200).json({"branchResult": "generic_error"});
+            return res.status(422).json({branchResult: 'generic_error'});
         } else {
-            res.status(200).json({"branchResult": "message_stored"});
+            return res.status(200).json({branchResult: 'message_stored'});
         }
         
     }catch(e){
         console.log(e);
-        res.status(500).json({"branchResult": "generic_error"});
+        return res.status(500).json({branchResult: 'generic_error'});
     }
 };
 
@@ -146,10 +146,10 @@ exports.execute = function (req, res) {
  */
 exports.publish = function (req, res) {
     try {
-        res.status(200).json({ "success": true });
+        return res.status(200).json({ "success": true });
     }catch(e){
         console.log(e);
-        res.status(500).json({ "success": false });
+        return res.status(500).json({ "success": false });
     }
 };
 
@@ -158,9 +158,9 @@ exports.publish = function (req, res) {
  */
 exports.validate = function (req, res) {
     try {
-        res.status(200).json({ "success": true });
+        return res.status(200).json({ "success": true });
     }catch(e){
         console.log(e);
-        res.status(500).json({ "success": false });
+        return res.status(500).json({ "success": false });
     }
 };
