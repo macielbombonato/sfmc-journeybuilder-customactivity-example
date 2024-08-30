@@ -21,7 +21,7 @@
                 }
             ],
             "outArguments": [],
-            "url": "https://${req.headers.host}/execute",
+            "url": "https://sfmc-jb-ca-example-b7d31b868d68.herokuapp.com/execute",
             "verb": "POST",
             "body": "",
             "format": "json",
@@ -35,28 +35,28 @@
     "configurationArguments": {
       "applicationExtensionKey": "472c3918-eab5-4743-b084-e9722b0e467b",
        "save": {
-           "url": "https://${req.headers.host}/save",
+           "url": "https://sfmc-jb-ca-example-b7d31b868d68.herokuapp.com/save",
             "verb": "POST",
             "body": "",
             "format": "json",
             "useJwt": false
        },
        "publish": {
-           "url": "https://${req.headers.host}/publish",
+           "url": "https://sfmc-jb-ca-example-b7d31b868d68.herokuapp.com/publish",
             "verb": "POST",
             "body": "",
             "format": "json",
             "useJwt": false
        },
        "stop": {
-           "url": "https://${req.headers.host}/stop",
+           "url": "https://sfmc-jb-ca-example-b7d31b868d68.herokuapp.com/stop",
             "verb": "POST",
             "body": "",
             "format": "json",
             "useJwt": false
        }, 
        "validation": {
-            "url": "https://${req.headers.host}/validate",
+            "url": "https://sfmc-jb-ca-example-b7d31b868d68.herokuapp.com/validate",
             "verb": "POST",
             "body": "",
             "useJwt": false
