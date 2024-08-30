@@ -20,11 +20,7 @@
                   "body": "Fulfill this field."
                 }
             ],
-            "outArguments": [
-                {
-                    "SystemToken": "default"
-                }
-            ],
+            "outArguments": [],
             "url": "https://sfmc-jb-ca-example-b7d31b868d68.herokuapp.com/execute",
             "verb": "POST",
             "body": "",

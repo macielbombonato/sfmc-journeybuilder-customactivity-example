@@ -127,11 +127,19 @@ exports.execute = function (req, res) {
         console.log("Message will sent to: " + req.body.inArguments[0].to.valueOf());
         console.log((req.body.inArguments[0].to.valueOf() == new String("999").valueOf()));
 
+        // Preparing the return
+        const responseObject = {
+            branchResult: "message_stored",
+            SystemToken: generateRandomCode()
+        };
+
         // To validate alternative flow on jorney
         if (req.body.inArguments[0].to.valueOf() == new String("999").valueOf()) {
-            return res.status(422).json({branchResult: 'generic_error'});
+            responseObject.branchResult = 'generic_error';
+            return res.status(422).json(responseObject);
         } else {
-            return res.status(200).json({branchResult: 'message_stored'});
+            responseObject.branchResult = 'message_stored';
+            return res.status(200).json(responseObject);
         }
         
     }catch(e){
@@ -139,6 +147,14 @@ exports.execute = function (req, res) {
         return res.status(500).json({branchResult: 'generic_error'});
     }
 };
+
+function generateRandomCode() {
+    let toReturn = String.fromCharCode(65+(Math.random() * 5));
+    for(let i = 0; i < 4; i++) {
+        toReturn += String.fromCharCode(65+(Math.random() * 25));
+    }
+    return toReturn + "-" + Math.round(Math.random() * 99999, 0);
+}
 
 
 /*
