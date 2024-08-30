@@ -19,7 +19,11 @@
                   "body": "Fulfill this field."
                 }
             ],
-            "outArguments": [],
+            "outArguments": [
+                {
+                    "result": ""
+                }
+            ],
             "url": "https://sfmc-jb-ca-example-b7d31b868d68.herokuapp.com/execute",
             "verb": "POST",
             "body": "",
