@@ -8,8 +8,7 @@
     "lang": {
        "en-US": {
            "name": "CA-Message Test",
-           "description": "Custom Activity Test",
-           "TwilioMessage":"test"
+           "description": "CA-Message Test"
        }
     },
     "arguments": {
