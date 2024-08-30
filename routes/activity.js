@@ -129,14 +129,14 @@ exports.execute = function (req, res) {
 
         // To validate alternative flow on jorney
         if (req.body.inArguments[0].to.valueOf() == new String("999").valueOf()) {
-            res.status(200).json({branchResult: 'generic_error'});
+            res.status(500).json({"branchResult": "generic_error"});
         } else {
-            res.status(200).json({branchResult: 'message_stored'});
+            res.status(200).json({"branchResult": "message_stored"});
         }
         
     }catch(e){
         console.log(e);
-        res.status(500).json({branchResult: 'generic_error'});
+        res.status(500).json({"branchResult": "generic_error"});
     }
 };
 
