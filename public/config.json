@@ -108,7 +108,8 @@
                         "result": {
                             "dataType": "String",
                             "isNullable": true,
-                            "direction": "out"
+                            "direction": "out", 
+                            "access": "visible"
                         }
                     }
                 ]
