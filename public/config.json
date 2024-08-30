@@ -1,10 +1,10 @@
 {
     "workflowApiVersion": "1.1",
     "metaData": {
-       "icon": "images/iconSmall.png",
-       "category": "flow"
+       "icon": "images/icon.png",
+       "category": "custom"
     },
-    "type": "REST",
+    "type": "RESTDECISION",
     "lang": {
        "en-US": {
            "name": "Custom Activity Test",
@@ -20,7 +20,11 @@
                   "body": "Fulfill this field."
                 }
             ],
-            "outArguments": [],
+            "outArguments": [
+                {
+                    "SystemToken": "default"
+                }
+            ],
             "url": "https://sfmc-jb-ca-example-b7d31b868d68.herokuapp.com/execute",
             "verb": "POST",
             "body": "",
@@ -119,7 +123,15 @@
                         }
                     }
                 ],
-                "outArguments": []
+                "outArguments": [
+                    { 
+                        "SystemToken": {
+                            "dataType": "String",
+                            "isNullable": true,
+                            "direction": "out"
+                        }
+                    }
+                ]
             }
         }
     }
