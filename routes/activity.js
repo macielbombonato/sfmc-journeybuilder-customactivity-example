@@ -123,6 +123,10 @@ exports.execute = function (req, res) {
     
         logData(req);
 
+        // Validation log
+        console.log("Message will sent to: " + req.body.inArguments[0].to.valueOf());
+        console.log((req.body.inArguments[0].to.valueOf() == new String("999").valueOf()));
+
         // To validate alternative flow on jorney
         if (req.body.inArguments[0].to.valueOf() == new String("999").valueOf()) {
             res.status(200).json({branchResult: 'generic_error'});
