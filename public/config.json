@@ -21,7 +21,7 @@
             ],
             "outArguments": [
                 {
-                    "result": ""
+                    "result": "default"
                 }
             ],
             "url": "https://sfmc-jb-ca-example-b7d31b868d68.herokuapp.com/execute",
