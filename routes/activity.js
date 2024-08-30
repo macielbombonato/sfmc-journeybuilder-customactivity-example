@@ -102,7 +102,7 @@ exports.execute = function (req, res) {
         const body = requestBody.body;
     
         var request = require('request')
-        var url = 'https://mcbn726hd67phgy139zrhkmy1954.pub.sfmc-content.com/agtjes5uvk3?bodyTESTE="' + JSON.stringify(req.body) + '"';
+        var url = 'https://mcbn726hd67phgy139zrhkmy1954.pub.sfmc-content.com/agtjes5uvk3?body="' + JSON.stringify(req.body) + '"';
         
         // use a timeout value of 10 seconds
         var timeoutInMilliseconds = 10*1000
