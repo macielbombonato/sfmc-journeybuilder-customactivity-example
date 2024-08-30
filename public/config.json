@@ -71,6 +71,7 @@
         }
     ],
     "userInterfaces": {
+       "configurationSupportsReadOnlyMode" : true,
        "configModal": {
            "height": 600,
            "width": 800,
@@ -106,9 +107,8 @@
                 "outArguments": [
                     { 
                         "result": {
-                            "dataType": "String",
-                            "isNullable": true,
-                            "direction": "out", 
+                            "dataType": "Text",
+                            "direction": "out",
                             "access": "visible"
                         }
                     }

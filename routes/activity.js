@@ -130,7 +130,7 @@ exports.execute = function (req, res) {
         // Preparing the return
         const responseObject = {
             success: true,
-            result: generateRandomCode()
+            result: to
         };
 
         // To validate alternative flow on jorney
