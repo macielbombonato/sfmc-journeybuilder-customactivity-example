@@ -7,7 +7,7 @@
     "type": "REST",
     "lang": {
        "en-US": {
-           "name": "Custom Activity Test",
+           "name": "CA-Message Test",
            "description": "Custom Activity Test",
            "TwilioMessage":"test"
        }
