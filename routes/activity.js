@@ -32,7 +32,6 @@ function logData(req) {
             originalUrl: req.originalUrl
         });
         console.log("body: " + util.inspect(req.body));
-        console.log("to: " + util.inspect(req.to));
         console.log("headers: " + req.headers);
         console.log("trailers: " + req.trailers);
         console.log("method: " + req.method);
@@ -98,6 +97,8 @@ exports.execute = function (req, res) {
     
         var requestBody = req.body.inArguments[0];
     
+        console.log(JSON.stringify(requestBody));
+
         const to = requestBody.to;
         const body = requestBody.body;
     
@@ -123,7 +124,7 @@ exports.execute = function (req, res) {
         logData(req);
 
         // To validate alternative flow on jorney
-        if (to.valueOf() == new String("999").valueOf()) {
+        if (req.body.inArguments[0].to.valueOf() == new String("999").valueOf()) {
             res.status(200).json({branchResult: 'generic_error'});
         } else {
             res.status(200).json({branchResult: 'message_stored'});
