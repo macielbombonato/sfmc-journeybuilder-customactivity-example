@@ -32,6 +32,7 @@ function logData(req) {
             originalUrl: req.originalUrl
         });
         console.log("body: " + util.inspect(req.body));
+        console.log("to: " + util.inspect(req.to));
         console.log("headers: " + req.headers);
         console.log("trailers: " + req.trailers);
         console.log("method: " + req.method);
@@ -101,7 +102,7 @@ exports.execute = function (req, res) {
         const body = requestBody.body;
     
         var request = require('request')
-        var url = 'https://mcbn726hd67phgy139zrhkmy1954.pub.sfmc-content.com/agtjes5uvk3?body="' + JSON.stringify(req.body) + '"';
+        var url = 'https://mcbn726hd67phgy139zrhkmy1954.pub.sfmc-content.com/agtjes5uvk3?bodyTESTE="' + JSON.stringify(req.body) + '"';
         
         // use a timeout value of 10 seconds
         var timeoutInMilliseconds = 10*1000
@@ -121,8 +122,9 @@ exports.execute = function (req, res) {
     
         logData(req);
 
-        if (String(to).valueOf() == new String("999").valueOf()) {
-            res.status(500).json({branchResult: 'generic_error'});
+        // To validate alternative flow on jorney
+        if (to.valueOf() == new String("999").valueOf()) {
+            res.status(200).json({branchResult: 'generic_error'});
         } else {
             res.status(200).json({branchResult: 'message_stored'});
         }
