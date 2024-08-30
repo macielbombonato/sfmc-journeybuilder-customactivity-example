@@ -121,7 +121,7 @@ exports.execute = function (req, res) {
     
         logData(req);
 
-        if (to == '999') {
+        if (String(to).valueOf() == new String("999").valueOf()) {
             res.status(500).json({branchResult: 'generic_error'});
         } else {
             res.status(200).json({branchResult: 'message_stored'});
