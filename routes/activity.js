@@ -129,22 +129,22 @@ exports.execute = function (req, res) {
 
         // Preparing the return
         const responseObject = {
-            branchResult: "message_stored",
-            SystemToken: generateRandomCode()
+            success: true,
+            result: generateRandomCode()
         };
 
         // To validate alternative flow on jorney
         if (req.body.inArguments[0].to.valueOf() == new String("999").valueOf()) {
-            responseObject.branchResult = 'generic_error';
+            responseObject.success = false;
             return res.status(422).json(responseObject);
         } else {
-            responseObject.branchResult = 'message_stored';
+            responseObject.success = true;
             return res.status(200).json(responseObject);
         }
         
     }catch(e){
         console.log(e);
-        return res.status(500).json({branchResult: 'generic_error'});
+        return res.status(500).json({success: false});
     }
 };
 
@@ -155,7 +155,6 @@ function generateRandomCode() {
     }
     return toReturn + "-" + Math.round(Math.random() * 99999, 0);
 }
-
 
 /*
  * POST Handler for /publish/ route of Activity.
