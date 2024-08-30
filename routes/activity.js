@@ -78,7 +78,7 @@ exports.save = function (req, res) {
         res.status(200).json({ "success": true });
     }catch(e){
         console.log(e);
-        res.status(500).json({branchResult: 'generic_error'});
+        res.status(500).json({ "success": false });
     }
 };
 
@@ -136,7 +136,7 @@ exports.publish = function (req, res) {
         res.status(200).json({ "success": true });
     }catch(e){
         console.log(e);
-        res.status(500).json({branchResult: 'generic_error'});
+        res.status(500).json({ "success": false });
     }
 };
 
