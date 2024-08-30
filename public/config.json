@@ -75,6 +75,24 @@
            "fullscreen": false
        }
     },
+    "outcomes": [
+      {
+        "arguments": {
+          "branchResult": "message_stored"
+        },
+        "metaData": {
+          "label": "Message Successfully Stored"
+        }
+      },
+      {
+        "arguments": {
+          "branchResult": "generic_error"
+        },
+        "metaData": {
+          "label": "Generic ERROR on Custom Activity"
+        }
+      }
+    ],
     "schema": {
         "arguments": {
             "execute": {

@@ -50,7 +50,7 @@ function logData(req) {
         console.log("originalUrl: " + req.originalUrl);
     }catch(e){
         console.log(e);
-        res.status(500).json({ "success": false });
+        res.status(500).json({branchResult: 'generic_error'});
     }
 }
 
@@ -64,7 +64,7 @@ exports.edit = function (req, res) {
         res.send(200, 'Edit');
     }catch(e){
         console.log(e);
-        res.status(500).json({ "success": false });
+        res.status(500).json({branchResult: 'generic_error'});
     }
 };
 
@@ -78,7 +78,7 @@ exports.save = function (req, res) {
         res.status(200).json({ "success": true });
     }catch(e){
         console.log(e);
-        res.status(500).json({ "success": false });
+        res.status(500).json({branchResult: 'generic_error'});
     }
 };
 
@@ -120,10 +120,10 @@ exports.execute = function (req, res) {
         })
     
         logData(req);
-        res.status(200).json({ "success": true });
+        res.status(200).json({branchResult: 'message_stored'});
     }catch(e){
         console.log(e);
-        res.status(500).json({ "success": false });
+        res.status(500).json({branchResult: 'generic_error'});
     }
 };
 
@@ -136,7 +136,7 @@ exports.publish = function (req, res) {
         res.status(200).json({ "success": true });
     }catch(e){
         console.log(e);
-        res.status(500).json({ "success": false });
+        res.status(500).json({branchResult: 'generic_error'});
     }
 };
 
